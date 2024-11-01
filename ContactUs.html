@@ -1,7 +1,60 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Contact Us</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            font-size: 100px;
+            margin-top: 20px;
+        }
+        pre {
+            font-size: 16px;
+            text-align: center;
+            padding: 20px;
+            font-weight: 200;
+        }
+        #Seperator1, #Seperator2 {
+            height: 5px; 
+            background-color: gray;
+            border: none;
+            margin: 20px 0;
+        }
+        .ContactForm {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 1cm;
+            border-color: blueviolet;
+            border-width: 5px;
+        }
+        textarea.ContactForm {
+            height: 100px;
+            resize: none;
 
-
-<title>
-    
-</title>
+            
+        }
+    </style>
+</head>
+<body>
+    <header>Contact Us</header>
+    <hr id="Seperator1">
+    <pre>We value your feedback and are here to help with any questions or concerns you may have.
+        Whether you want to learn more about our services, share your experience, or need support, 
+        we’re always ready to listen. Let us know how we can assist you, and we’ll get back to you 
+        as soon as possible. Your input helps us improve and better serve you! 
+    </pre>
+   
+    <hr id="Seperator2">
+    <form>
+        <label for="email" ><strong> Your Email</label><br>
+        <input type="text" name="Email" id="email" class="ContactForm"><br><br>
+        <label for="message"><strong> Your Message</label><br>
+        <textarea name="Message" id="message" class="ContactForm"></textarea>
+    </form>
+</body>
 </html>
