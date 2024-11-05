@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,14 +47,20 @@
             margin: 20px 0;
         }
         .btn-submit {
-            background-color: rgb(34, 139, 34);
+            background-color: #51015d;
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for button effects */
         }
-        
+        /* Focus effect for the submit button */
+        .btn-submit:focus {
+            background-color: #86169a; /* Darker color on focus */
+            transform: scale(1.05); /* Slightly enlarge on focus */
+            outline: none; /* Remove outline */
+        }
     </style>
 </head>
 <body>
@@ -79,11 +85,9 @@
         </div>
     </nav>
 
-    
     <header>Contact Us</header>
     <hr id="seperator">
 
-    
     <pre>We value your feedback and are here to help with any questions or concerns you may have.
         Whether you want to learn more about our services, share your experience, or need support, 
         we’re always ready to listen. Let us know how we can assist you, and we’ll get back to you 
