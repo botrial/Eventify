@@ -1,0 +1,32 @@
+/* styles.css */
+
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white; 
+}
+
+header {
+    font-size: 80px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+pre {
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    font-weight: 200;
+}
+
+label {
+    font-size: 1.2em;
+    color: white; 
+}
+
+#seperator {
+    height: 4px;
+    background-color: black;
+    border: none;
+    margin: 20px 0;
+}
