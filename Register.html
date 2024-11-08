@@ -28,12 +28,24 @@
             background-color: #51015d; /* Main color */
             color: white; /* Text color */
             text-align: center; /* Center the text */
+            font-weight: bolder;
             
         }
         /*  effect for the button */
-        .discover-btn:hover, .discover-btn:focus {
-            background-color: #86169a; /* Darker color on focus */
+        .discover-btn:hover {
             transform: scale(1.05); /* Slightly enlarge on focus */
+            color: #51015d;
+            background-color: #ffff;
+        }
+
+        discover-btn:focus{
+            background-color: #ffff; /* Darker color on focus */
+            transform: scale(1.05); /* Slightly enlarge on focus */
+            color: #51015d;
+        }
+         /* Active link color in navbar */
+         .navbar-nav .nav-link.active {
+            color: #86169a; /* Purple color for active link */
         }
     </style>
 </head>

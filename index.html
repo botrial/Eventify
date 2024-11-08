@@ -33,13 +33,26 @@
         /* Button styles */
         .btn-success {
             background-color: #51015d;
-            color: white;
-           
+            color: #ffffff;
+            font-size: large;
+            font-weight: bolder;
         }
         /* Focus effect for the buttons */
         .btn-success:focus {
             background-color: #86169a; /* Darker color on focus */
             transform: scale(1.05); /* Slightly enlarge on focus */
+            color: #ffffff;
+            margin-top: 30%;
+        }
+        /* Hover effect for the buttons */
+        .btn-success:hover {
+            background-color :#ffffff; /* Subtle color change on hover */
+            color: #51015d;
+            transform:scale(1.05) ;
+        }
+         /* Active link color in navbar */
+         .navbar-nav .nav-link.active {
+            color: #86169a; /* Purple color for active link */
         }
     </style>
 </head>
@@ -71,6 +84,5 @@
         <a href="Booking.html" class="btn btn-success" style="position: absolute; left:49%; width: 15%;">Booking Hall</a>
     </div>
     <br>
-     
 </body>
 </html>
