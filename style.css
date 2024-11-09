@@ -34,6 +34,12 @@ label {
     border: none;
     margin: 20px 0;
 }
+
+/* Navbar styling */
+.navbar {
+    background-color: #34003d; /* Purple background for navbar */
+}
+
 /* Button Styles */
 .btn-success {
     background-color: #51015d;
@@ -65,7 +71,7 @@ label {
 
 /* Active link color in navbar */
 .navbar-nav .nav-link.active {
-    color: #86169a; /* Purple color for active link */
+    color: #34003d; /* Purple color for active link */
     font-weight: bold;/* bold weight for active link*/
     font-size: larger; /* larger size for active linl*/
 }
