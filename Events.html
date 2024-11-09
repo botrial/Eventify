@@ -23,9 +23,54 @@
             margin-bottom: 10px;
         }
         p.Image_Description{ margin-top: 10px;}
-         /* Active link color in navbar */
-         .navbar-nav .nav-link.active {
+        
+        /* Active link color in navbar */
+        .navbar-nav .nav-link.active {
             color: #86169a; /* Purple color for active link */
+        }
+
+        /* Search bar styles */
+        .search-bar-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .search-bar-container input {
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            color: #86169a;
+            font-size: medium;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .btn-success {
+            background-color: #51015d;
+            color: #ffffff;
+            font-size: large;
+            font-weight: bolder;
+            padding: 10px 20px;
+            border-radius: 10px; /* Softer rounded edges */
+            border: 2px solid #51015d; /* Slight border with matching color */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            transition: all 0.4s ease; /* Smooth transition */
+        }
+
+        .btn-success:hover {
+            background-color: #ffffff;
+            color: #51015d;
+            transform: scale(1.08); /* Slightly larger on hover */
+            box-shadow: 0px 6px 12px rgba(255, 40, 194, 0.3); /* Slightly deeper shadow */
+        }
+
+        .btn-success:focus {
+            background-color: #86169a;
+            color: #ffffff;
+            outline: none; /* Removes default focus outline */
+            transform: scale(1.05);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced focus effect */
         }
     </style>
 </head>
@@ -41,7 +86,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="Register.html">Register</a></li>
-                <li class="nav-item"><a class="nav-link active " href="Events.html">Events</a></li>
+                <li class="nav-item"><a class="nav-link active" href="Events.html">Events</a></li>
                 <li class="nav-item"><a class="nav-link" href="Booking.html">Booking</a></li>
                 <li class="nav-item"><a class="nav-link" href="Payment.html">Payment</a></li>
                 <li class="nav-item"><a class="nav-link" href="AboutUs.html">About us</a></li>
@@ -50,14 +95,20 @@
         </div>
     </nav>
     
-    <h1>Discover Events </h1>
+    <h1>Discover Events</h1>
     <hr>
     
+    <!-- Search Bar -->
+    <div class="search-bar-container">
+        <input type="text" id="search" placeholder="Search for events, workshops, etc.">
+        <button class="btn-success">Search</button>
+    </div>
+    
     <!-- Image Gallery -->
-    <div class="container  d-flex justify-content-center gap-5">
+    <div class="container d-flex justify-content-center gap-5">
         <div class="text-center">
             <img src="Event1.jpeg" class="img-thumbnail" alt="Image 1">
-            <p p class="Image_Description">DAFITC 2024</p>
+            <p class="Image_Description">DAFITC 2024</p>
         </div>
         <div class="text-center">
             <img src="Event2.jpeg" class="img-thumbnail" alt="Image 2">
@@ -68,9 +119,9 @@
             <p class="Image_Description">Artificial Intelligence and future work</p>
         </div>
     </div>
-    <hr style=" height: 5px; color: white;">
+    <hr style="height: 5px; color: white;">
     
-         <!-- Second Row of Images -->
+    <!-- Second Row of Images -->
     <div class="container d-flex justify-content-center gap-5">
         <div class="text-center">
             <img src="Event3.jpg" class="img-thumbnail" alt="Image 4" width="200px" height="150px">
@@ -78,18 +129,17 @@
         </div>
         <div class="text-center">
             <img src="Event6.jpg" class="img-thumbnail" alt="Image 5" width="210px" height="250px">
-            <p class="Image_Description">Engaging possiblities</p>
+            <p class="Image_Description">Engaging possibilities</p>
         </div>
         <div class="text-center">
-            <img src="Event5.jpeg" class="img-thumbnail" alt="Image 6" width="300px" height="300px" >
+            <img src="Event5.jpeg" class="img-thumbnail" alt="Image 6" width="300px" height="300px">
             <p class="Image_Description">Literary fair</p>
         </div>
         <div class="text-center">
-            <img src="Event6.jpeg" class="img-thumbnail" alt="Image 7" width="220px" height="150px" >
+            <img src="Event6.jpeg" class="img-thumbnail" alt="Image 7" width="220px" height="150px">
             <p class="Image_Description">Cine Arda</p>
         </div>
     </div>
     <hr style="border: none; height: 5px; background-color: white;">
-
 </body>
 </html>

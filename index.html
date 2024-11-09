@@ -54,31 +54,35 @@
         .navbar-nav .nav-link.active {
             color: #9805ac; /* Purple color for active link */
             font-weight: bold;
-            font-size: larger; /* larger size for active linl*/
+            font-size: larger; /* larger size for active link */
         }
 
-        /* Button styles */
         .btn-success {
             background-color: #51015d;
             color: #ffffff;
             font-size: large;
             font-weight: bolder;
-            border-radius: 5%;
-            border: none;
+            padding: 10px 20px;
+            border-radius: 10px; /* Softer rounded edges */
+            border: 2px solid #51015d; /* Slight border with matching color */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            transition: all 0.4s ease; /* Smooth transition */
+            text-decoration: none; /* Remove underline */
         }
 
-        /* Focus effect for buttons */
-        .btn-success:focus {
-            background-color: #86169a; /* Darker color on focus */
-            transform: scale(1.05);
-            color: #ffffff;
-        }
-
-        /* Hover effect for buttons */
         .btn-success:hover {
             background-color: #ffffff;
             color: #51015d;
+            transform: scale(1.08); /* Slightly larger on hover */
+            box-shadow: 0px 6px 12px rgba(255, 40, 194, 0.3); /* Slightly deeper shadow */
+        }
+
+        .btn-success:focus {
+            background-color: #86169a;
+            color: #ffffff;
+            outline: none; /* Removes default focus outline */
             transform: scale(1.05);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced focus effect */
         }
 
         /* Button positioning */
@@ -124,9 +128,9 @@
 
     <!-- Buttons -->
     <div class="button-container">
-        <a href="Events.html" class="btn btn-success" style="width: 15%; margin-left: -5% ;">Discover Events</a>
-        <a href="Workshop.html" class="btn btn-success" style="width: 15%; margin-left: -40%;">Explore Workshops</a>
-        <a href="Booking.html" class="btn btn-success" style="width: 15%; margin-left: -40%;">Booking Hall</a>
+        <a href="Events.html" class="btn-success">Discover Events</a>
+        <a href="Workshop.html" class="btn-success">Explore Workshops</a>
+        <a href="Booking.html" class="btn-success">Booking Hall</a>
     </div>
 
 </body>
