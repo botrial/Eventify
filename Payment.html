@@ -47,13 +47,6 @@
         }
 
         /* Button Styles */
-        /* Active link color in navbar */
-        .navbar-nav .nav-link.active {
-            color: #86169a; /* Purple color for active link */
-            font-weight: bold; /* Bold weight for active link */
-            font-size: larger; /* Larger size for active link */
-        }
-
         /* Table Styles */
         table {
             width: 80%;
@@ -98,15 +91,14 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="logo_only_web.png" width="50px" alt="EventifyME logo">
+                <img src="EventifyMe_purple_logo.png" width="50px" alt="EventifyME logo">
                 EventifyME
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="Register.html">Register</a></li>
                 <li class="nav-item"><a class="nav-link" href="Events.html">Events</a></li>
                 <li class="nav-item"><a class="nav-link" href="Booking.html">Booking</a></li>
                 <li class="nav-item"><a class="nav-link active" href="Payment.html">Payment</a></li>
@@ -123,7 +115,7 @@
     <hr id="seperator">
 
     <section class="content-container">
-        <p>We strive to make your experience as seamless as possible by offering a variety of secure payment methods. You can choose from the following options to complete your transactions:</p>
+        <p style="text-align: center; margin-bottom: -20px;">We strive to make your experience as seamless as possible by offering a variety of secure payment methods. You can choose from the following options to complete your transactions:</p>
         
         <!-- Payment Methods Table -->
         <table>
@@ -153,7 +145,7 @@
             </tbody>
         </table>
 
-        <p>All payment information is securely encrypted to ensure your personal data is protected. If you encounter any issues or have questions about your payment, feel free to reach out to our support team.</p>
+        <p style="text-align: center; margin-top: 10px;">All payment information is securely encrypted to ensure your personal data is protected. If you encounter any issues or have questions about your payment, feel free to reach out to our support team.</p>
     </section>
 
     <!-- Buttons at the Bottom -->
@@ -161,6 +153,21 @@
         <a href="Booking.html" class="btn btn-success">Proceed to Booking</a>
         <a href="ContactUs.html" class="btn btn-success" style="margin-left: 20px;">Contact Support</a>
     </div>
+    <hr>
+    <!-- Footer -->
+<footer style="background-color: #34003d; color: white; padding: 15px 0;">
+    <div class="container text-center">
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" style="margin: 0 10px;">
+           <img src="facebook.png" alt="Facebook" width="25px">
+            </a>
+            <a href="https://instagram.com" target="_blank" style="margin: 0 10px;">
+                <img src="instLogo.png" alt="Instagram" width="25px">
+            </a>
+        </div>
+        <p style="margin-top: 10px; margin-bottom: -5px;">&copy; 2024 EventifyME. All rights reserved.</p>
+    </div>
+</footer>
 
 </body>
 </html>
