@@ -34,3 +34,39 @@ label {
     border: none;
     margin: 20px 0;
 }
+.btn-success {
+    background-color: #51015d;
+    color: #ffffff;
+    font-size: large;
+    font-weight: bolder;
+    padding: 10px 20px;
+    border-radius: 10px; /* Softer rounded edges */
+    border: 2px solid #51015d; /* Slight border with matching color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 4s ease; /* Smooth transition */
+}
+
+.btn-success:hover {
+    background-color: #ffffff;
+    color: #51015d;
+    transform: scale(1.08); /* Slightly larger on hover */
+    box-shadow: 0px 6px 12px rgba(255, 40, 194, 0.3); /* Slightly deeper shadow */
+}
+
+.btn-success:focus {
+    background-color: #86169a;
+    color: #ffffff;
+    outline: none; /* Removes default focus outline */
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced focus effect */
+}
+
+
+/* Active link color in navbar */
+.navbar-nav .nav-link.active {
+    color: #86169a; /* Purple color for active link */
+    font-weight: bold;/* bold weight for active link*/
+    font-size: larger; /* larger size for active linl*/
+}
+
+
