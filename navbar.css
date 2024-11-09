@@ -1,0 +1,16 @@
+/* Navbar background color */
+.navbar {
+    background-color: #34003d; /* Purple background for navbar */
+}
+
+/* Navbar link colors */
+.navbar .nav-link {
+    color: white;
+}
+
+/* Active link color in navbar */
+.navbar-nav .nav-link.active {
+    color: #9805ac; /* Purple color for active link */
+    font-weight: bold;
+    
+}
