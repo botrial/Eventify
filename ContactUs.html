@@ -63,12 +63,36 @@
             border-color: #86169a;
             outline: none;
         }
+
+        table {
+            width: 100%;
+            margin: 30px 0;
+            border-color: #51015d;
+            border-collapse: collapse;
+            border-style: solid;
+            border-end-end-radius: 12%;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #86169a;
+        }
+
+        th {
+            background-color: #51015d;
+            color: white;
+        }
+
+        td {
+            color: white;
+        }
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm" style="background-color: #86169a;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
                 <img src="EventifyMe_purple_logo.png" width="50px" alt="EventifyME logo">
@@ -104,23 +128,57 @@
             <label for="message"><strong>Your Message</strong></label><br>
             <textarea name="Message" id="message" class="ContactForm form-control mx-auto"></textarea>
         </div>
-        <button type="submit" class="btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
     </form>
+
+    <div class="content-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>What payment methods do you accept?</strong></td>
+                    <td>We accept credit/debit cards, PayPal, and bank transfers for payments.</td>
+                </tr>
+                <tr>
+                    <td><strong>Can I get a refund for my booking?</strong></td>
+                    <td>Yes, refunds are available under certain conditions. Please check our refund policy for details.</td>
+                </tr>
+                <tr>
+                    <td><strong>Can I attend an event without registering?</strong></td>
+                    <td>Registration is required for all events to ensure proper accommodations and resources.</td>
+                </tr>
+                <tr>
+                    <td><strong>Do you offer discounts?</strong></td>
+                    <td>Yes, we offer discounts during special promotions or for early registrations. Keep an eye on our offers.</td>
+                </tr>
+                <tr>
+                    <td><strong>How do I know if an event is fully booked?</strong></td>
+                    <td>You will see a notification on the event page if it is fully booked. We also provide a waiting list option.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <hr>
     <!-- Footer -->
-<footer style="background-color: #34003d; color: white; padding: 15px 0;">
-    <div class="container text-center">
-        <div class="social-links">
-            <a href="https://facebook.com" target="_blank" style="margin: 0 10px;">
-           <img src="facebook.png" alt="Facebook" width="25px">
-            </a>
-            <a href="https://instagram.com" target="_blank" style="margin: 0 10px;">
-                <img src="instLogo.png" alt="Instagram" width="25px">
-            </a>
+    <footer style="background-color: #34003d; color: white; padding: 15px 0;">
+        <div class="container text-center">
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" style="margin: 0 10px;">
+                    <img src="facebook.png" alt="Facebook" width="25px">
+                </a>
+                <a href="https://instagram.com" target="_blank" style="margin: 0 10px;">
+                    <img src="instLogo.png" alt="Instagram" width="25px">
+                </a>
+            </div>
+            <p style="margin-top: 10px; margin-bottom: -5px;">&copy; 2024 EventifyME. All rights reserved.</p>
         </div>
-        <p style="margin-top: 10px; margin-bottom: -5px;">&copy; 2024 EventifyME. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>
