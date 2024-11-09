@@ -34,6 +34,7 @@ label {
     border: none;
     margin: 20px 0;
 }
+/* Button Styles */
 .btn-success {
     background-color: #51015d;
     color: #ffffff;
@@ -43,7 +44,7 @@ label {
     border-radius: 10px; /* Softer rounded edges */
     border: 2px solid #51015d; /* Slight border with matching color */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    transition: all 4s ease; /* Smooth transition */
+    transition: all 0.4s ease; /* Smooth transition */
 }
 
 .btn-success:hover {
