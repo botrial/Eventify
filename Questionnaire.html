@@ -240,14 +240,14 @@
     <h2 style="text-align: center;">Frequently Asked Questions (FAQ)</h2>
 
 <br>
-<div class="content-container" style="text-align: center;">
+<div class="content-container" style="text-align: center;" id="show button">
     <input class="btn-success" type="button" value="Show FAQ" onclick="toggleTable()" />
 </div>
 
 
 
 <div class="content-container">
-    <table style="display: none;">
+    <table style="display: none;" id="table">
         <thead>
             <tr>
                 <th>Question</th>
@@ -316,8 +316,8 @@
             }
         }
         function toggleTable() {
-            const table = document.querySelector('table');
-            const button = document.querySelector('input[type="button"]');
+            const table = document.getElementById('table');
+            const button = document.getElementById('show button');
             if (table.style.display === 'none' ) {
                 table.style.display = 'table'; // Show the table
                 button.value = 'Hide FAQ'; // Change button text
