@@ -1,0 +1,134 @@
+/* General Styling */
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    font-size: 80px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Text Styling for Preformatted Text */
+pre {
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    font-weight: 200;
+}
+
+/* Label Styling */
+label {
+    font-size: 1.2em;
+    color: white; 
+}
+
+/* Separator Styling */
+#seperator {
+    height: 0px;
+    background-color: black;
+    border: none;
+    width: 50%;
+    margin: 20px auto; /* Centered horizontally */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #34003d; /* Purple background */
+    border-bottom: 2px solid #51015d; /* Slight border for visual separation */
+    padding: 10px 0;
+}
+
+/* Navbar Link Styling */
+.navbar .nav-link {
+    color: white !important;
+    font-size: 1.2em;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Navbar Active Link Styling */
+.navbar-nav .nav-link.active {
+    color: #9805ac !important; /* Purple color for active link */
+    font-weight: bold;
+    font-size: 1.3em; /* Slightly larger for emphasis */
+}
+
+/* Button Styling */
+.btn-success {
+    background-color: #51015d; /* Matching purple theme */
+    color: #ffffff; /* White text */
+    font-size: large;
+    font-weight: bolder;
+    padding: 10px 20px;
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #51015d; /* Solid border */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.4s ease; /* Smooth transition for hover effects */
+}
+
+.btn-success:hover {
+    background-color: #ffffff;
+    color: #51015d;
+    transform: scale(1.08); /* Slight zoom on hover */
+    box-shadow: 0px 6px 12px rgba(255, 40, 194, 0.3); /* Deeper shadow for hover */
+}
+
+.btn-success:focus {
+    background-color: #86169a;
+    color: #ffffff;
+    outline: none; /* Removes default focus outline */
+    transform: scale(1.05); /* Slight zoom for focus */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced focus effect */
+}
+
+/* Content Container Styling */
+.content-container {
+    text-align: center;
+    font-weight: bold;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: larger;
+}
+
+/* Header (h2) Styling */
+h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #9805ac; /* Purple text */
+}
+
+/* Paragraph Styling in Content Container */
+.content-container p {
+    margin-bottom: 15px;
+}
+
+/* Separator Styling */
+#seperator {
+    height: 0px;
+    background-color: black;
+    width: 50%;
+    border: none;
+    margin: 20px auto;
+}
+
+/* Additional Styling for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        font-size: 60px; /* Smaller header for small screens */
+    }
+
+    .navbar .nav-link {
+        font-size: 1em; /* Smaller navbar links */
+    }
+
+    .btn-success {
+        font-size: medium;
+        padding: 8px 16px;
+    }
+}
