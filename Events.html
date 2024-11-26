@@ -102,20 +102,20 @@
     <!-- Search Bar -->
     <div class="search-bar-container">
         <input type="text" id="search" placeholder="Search for events, workshops, etc.">
-        <button class="btn-success">Search</button>
+        <button class="btn-success" onclick="searchEvents()">Search</button>
     </div>
     
     <!-- Image Gallery -->
     <div class="container d-flex justify-content-center gap-5">
-        <div class="text-center">
+        <div class="text-center event">
             <img src="Event1.jpeg" class="img-thumbnail" alt="Image 1">
             <p class="Image_Description">DAFITC 2024</p>
         </div>
-        <div class="text-center">
+        <div class="text-center event">
             <img src="Event2.jpeg" class="img-thumbnail" alt="Image 2">
             <p class="Image_Description">ASTROFEST</p>
         </div>
-        <div class="text-center">
+        <div class="text-center event">
             <img src="Event4.jpg" class="img-thumbnail" alt="Image 3" width="170px" height="100px">
             <p class="Image_Description">Artificial Intelligence and future work</p>
         </div>
@@ -124,24 +124,25 @@
     
     <!-- Second Row of Images -->
     <div class="container d-flex justify-content-center gap-5">
-        <div class="text-center">
+        <div class="text-center event">
             <img src="Event3.jpg" class="img-thumbnail" alt="Image 4" width="200px" height="150px">
             <p class="Image_Description">Summer Event</p>
         </div>
-        <div class="text-center">
+        <div class="text-center event">
             <img src="Event6.jpg" class="img-thumbnail" alt="Image 5" width="210px" height="250px">
             <p class="Image_Description">Engaging possibilities</p>
         </div>
-        <div class="text-center">
+        <div class="text-center event">
             <img src="Event5.jpeg" class="img-thumbnail" alt="Image 6" width="300px" height="300px">
             <p class="Image_Description">Literary fair</p>
         </div>
-        <div class="text-center">
+        <div class="text-center event">
             <img src="Event6.jpeg" class="img-thumbnail" alt="Image 7" width="220px" height="150px">
             <p class="Image_Description">Cine Arda</p>
         </div>
     </div>
     <hr style="border: none; height: 5px; background-color: white;">
+    
     <!-- Footer -->
     <footer style="background-color: #34003d; color: white; padding: 15px 0;">
         <div class="container text-center">
@@ -162,5 +163,30 @@
             <p style="margin-top: 10px; margin-bottom: -5px;">&copy; 2024 EventifyME. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Search Function Script -->
+    <script>
+        // Function to search for events
+        function searchEvents() {
+            // Get the search input value and convert it to lowercase
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+    
+            // Get all the event elements
+            const events = document.getElementsByClassName('event');
+    
+            // Loop through each event 
+            for (let i = 0; i < events.length; i++) {
+                const event = events[i]; // Get the current event
+                
+                // Check if the event text includes the search term
+                if (event.textContent.toLowerCase().includes(searchTerm)) {
+                    event.style.display = 'block'; // Show the event
+                } else {
+                    event.style.display = 'none'; // Hide the event
+                }
+            }
+        }
+    </script>
+
 </body>
 </html>
