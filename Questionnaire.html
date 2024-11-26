@@ -181,62 +181,54 @@
     </nav>
 
     <!-- Questionnaire Section -->
-    <div class="container-name">
-        <label for="name"><strong>Your Name</strong></label><br>
-        <input type="text" id="name" name="name">
-    </div>
+    <form action="submit" method="post">
+        <div class="container-name">
+            <label for="name"><strong>Your Name</strong></label><br>
+            <input type="text" id="name" name="name" >
+        </div>
+        <div class="container-experience">
+            <label for="experience"><strong>How experienced are you with the event?</strong></label><br>
+            <label><input type="radio" name="experience" value="Excellent" onclick="toggleCheckboxes('Excellent')"/> Excellent </label>
+            <label><input type="radio" name="experience" value="Very good" onclick="toggleCheckboxes('Very good')"/> Very good </label>
+            <label><input type="radio" name="experience" value="Good" onclick="toggleCheckboxes('Good')"/> Good </label>
+            <label><input type="radio" name="experience" value="OK" onclick="toggleCheckboxes('OK')"/> OK </label>
+            <label><input type="radio" name="experience" value="Bad" onclick="toggleCheckboxes('Bad')"/> Bad </label>
+            <label><input type="radio" name="experience" value="Very bad" onclick="toggleCheckboxes('Very bad')"/> Very bad </label>
+        </div>
 
-    <div class="container-experience">
-        <label for="experience"><strong>How experienced are you with the event?</strong></label><br>
-        <label><input type="radio" name="experience" value="Excellent" onclick="toggleCheckboxes('Excellent')"/> Excellent </label>
-        <label><input type="radio" name="experience" value="Very good" onclick="toggleCheckboxes('Very good')"/> Very good </label>
-        <label><input type="radio" name="experience" value="Good" onclick="toggleCheckboxes('Good')"/> Good </label>
-        <label><input type="radio" name="experience" value="OK" onclick="toggleCheckboxes('OK')"/> OK </label>
-        <label><input type="radio" name="experience" value="Bad" onclick="toggleCheckboxes('Bad')"/> Bad </label>
-        <label><input type="radio" name="experience" value="Very bad" onclick="toggleCheckboxes('Very bad')"/> Very bad </label>
-    </div>
+        <!-- Checkboxes for Excellent Experience -->
+        <div class="checkboxes" id="excellentCheckboxes">
+            <label><input type="checkbox" name="website_navigation" /> Website Navigation Ease </label><br>
+            <label><input type="checkbox" name="website_design" /> Website Design and Aesthetics</label><br>
+            <label><input type="checkbox" name="user_interface" /> User-Friendly Interface </label><br>
+            <label><input type="checkbox" name="information_availability" /> Information Availability </label><br>
+            <label><input type="checkbox" name="booking_process" /> Booking Process Ease</label><br>
+            <label><input type="checkbox" name="payment_gateway" /> Payment Gateway Functionality</label><br>
+        </div>
 
-    <!-- Checkboxes for Excellent Experience -->
-    <div class="checkboxes" id="excellentCheckboxes">
-        <label><input type="checkbox" name="website_navigation" /> Website Navigation Ease </label><br>
-        <label><input type="checkbox" name="website_design" /> Website Design and Aesthetics</label><br>
-        <label><input type="checkbox" name="user_interface" /> User-Friendly Interface </label><br>
-        <label><input type="checkbox" name="information_availability" /> Information Availability </label><br>
-        <label><input type="checkbox" name="booking_process" /> Booking Process Ease</label><br>
-        <label><input type="checkbox" name="payment_gateway" /> Payment Gateway Functionality</label><br>
-   
-        
+        <!-- Checkboxes for Good or Better Experience -->
+        <div class="checkboxes" id="goodCheckboxes">
+            <label><input type="checkbox" name="website_performance" /> Website Performance </label><br>
+            <label><input type="checkbox" name="event_discovery" /> Event Discovery on the Site </label><br>
+            <label><input type="checkbox" name="search_function" /> Search Functionality </label><br>
+            <label><input type="checkbox" name="accessibility_features" /> Accessibility Features </label><br>
+            <label><input type="checkbox" name="help_resources" /> Help/Support Resources </label><br>
+            <label><input type="checkbox" name="clear_instructions" /> Clear Instructions on Booking </label><br>
+        </div>
 
-    </div>
+        <!-- Checkboxes for Bad or Worse Experience -->
+        <div class="checkboxes" id="badCheckboxes">
+            <label><input type="checkbox" name="website_navigation_issues" /> Website Navigation Issues </label><br>
+            <label><input type="checkbox" name="broken_links" /> Broken Links or Pages </label><br>
+            <label><input type="checkbox" name="slow_page_load" /> Slow Page Load Times </label><br>
+            <label><input type="checkbox" name="poor_mobile_experience" /> Poor Mobile Experience </label><br>
+            <label><input type="checkbox" name="difficult_booking" /> Difficulty in Booking Events </label><br>
+        </div>
 
-    <!-- Checkboxes for Good or Better Experience -->
-    <div class="checkboxes" id="goodCheckboxes">
-        <label><input type="checkbox" name="website_performance" /> Website Performance </label><br>
-        <label><input type="checkbox" name="event_discovery" /> Event Discovery on the Site </label><br>
-        <label><input type="checkbox" name="search_function" /> Search Functionality </label><br>
-        <label><input type="checkbox" name="accessibility_features" /> Accessibility Features </label><br>
-        <label><input type="checkbox" name="help_resources" /> Help/Support Resources </label><br>
-        <label><input type="checkbox" name="clear_instructions" /> Clear Instructions on Booking </label><br>
-    </div>
-
-    <!-- Checkboxes for Bad or Worse Experience -->
-    <div class="checkboxes" id="badCheckboxes">
-        <label><input type="checkbox" name="website_navigation_issues" /> Website Navigation Issues </label><br>
-        <label><input type="checkbox" name="broken_links" /> Broken Links or Pages </label><br>
-        <label><input type="checkbox" name="slow_page_load" /> Slow Page Load Times </label><br>
-        <label><input type="checkbox" name="poor_mobile_experience" /> Poor Mobile Experience </label><br>
-        <label><input type="checkbox" name="difficult_booking" /> Difficult Booking Process </label><br>
-    </div>
-    <div class="checkboxes" id="OkCheckboxes">
-        <label><input type="checkbox" name="website_navigation_issues" /> Difficulty in finding events </label><br>
-        <label><input type="checkbox" name="Information" />Limited information on events </label><br>
-        <label><input type="checkbox" name="sNavigation" /> Somewhat confusing navigation </label><br>
-        <label><input type="checkbox" name="experience" /> Website could be more intuitive </label><br>
-        <label><input type="checkbox" name="booking" />No major issues, but could be improved in some areas  </label><br>
-
-
-
-    </div>
+        <div class="container-name">
+            <button type="submit" class="btn-success">Submit</button>
+        </div>
+    </form>
 
     
     <h2 style="text-align: center;">Frequently Asked Questions (FAQ)</h2>
@@ -305,25 +297,39 @@
 
     <script>
         // JavaScript function to toggle checkboxes visibility based on experience selection
-        function toggleCheckboxes(experience) {
-            // Hide all checkbox sections first
+      
+    
+    function toggleCheckboxes(experience) {
+        // Hide all checkbox sections first
+        document.getElementById('excellentCheckboxes').style.display = 'none';
+        document.getElementById('goodCheckboxes').style.display = 'none';
+        document.getElementById('badCheckboxes').style.display = 'none';
+        document.getElementById('OkCheckboxes').style.display = 'none';
+
+        // Show checkboxes based on the selected experience
+        if (experience === 'Excellent') {
+            document.getElementById('excellentCheckboxes').style.display = 'block';
+            document.getElementById('goodCheckboxes').style.display = 'none';
+            document.getElementById('OkCheckboxes').style.display = 'none';
+            document.getElementById('badCheckboxes').style.display = 'none';
+        } else if (experience === 'Very good' || experience === 'Good') {
+            document.getElementById('goodCheckboxes').style.display = 'block';
+            document.getElementById('excellentCheckboxes').style.display = 'none';
+            document.getElementById('OkCheckboxes').style.display = 'none';
+            document.getElementById('badCheckboxes').style.display = 'none';
+        } else if (experience === 'OK') {
+            document.getElementById('OkCheckboxes').style.display = 'block';
             document.getElementById('excellentCheckboxes').style.display = 'none';
             document.getElementById('goodCheckboxes').style.display = 'none';
             document.getElementById('badCheckboxes').style.display = 'none';
-
-            // Show checkboxes based on the selected experience
-            if (experience === 'Excellent') {
-                document.getElementById('excellentCheckboxes').style.display = 'block';
-            } else if (experience === 'Very good' || experience === 'Good') {
-                document.getElementById('goodCheckboxes').style.display = 'block';
-            }else if(experience==='OK'){
-                document.getElementById('OkCheckboxes').style.display = 'block';
-            }
-             else if (experience === 'Bad' || experience === 'Very bad') {
-                document.getElementById('badCheckboxes').style.display = 'block';
-            }
+        } else if (experience === 'Bad' || experience === 'Very bad') {
+            document.getElementById('badCheckboxes').style.display = 'block';
+            document.getElementById('excellentCheckboxes').style.display = 'none';
+            document.getElementById('goodCheckboxes').style.display = 'none';
+            document.getElementById('OkCheckboxes').style.display = 'none';
         }
-        function toggleTable() {
+    }
+    function toggleTable() {
             const table = document.getElementById('table');
             const button = document.getElementById('show button');
             if (table.style.display === 'none' ) {
@@ -334,8 +340,11 @@
                 button.value = 'Show FAQ'; // Change button text
             }
         }
+</script>
 
-    </script>
+        
+
+    
 
 </body>
 </html>
