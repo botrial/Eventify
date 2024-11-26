@@ -43,7 +43,6 @@
         /* Navbar styling */
         .navbar {
             background-color: #34003d; /* Purple background for navbar */
-            
         }
 
         /* Navbar link colors */
@@ -96,7 +95,6 @@
         hr {
             color: aliceblue;
         }
-        
     </style>
 </head>
 <body>
@@ -134,7 +132,16 @@
         <a href="Events.html" class="btn-success" style="margin-left: 10%;" id="Discover">Discover Events</a>
         <a href="Booking.html" class="btn-success" style="margin-right: 60%;" id="Booking">Booking Hall</a>
     </div>
-<hr>
+    <hr>
+
+    <!-- Image Gallery -->
+   <!-- Image Gallery -->
+<div id="gallery" style="display: flex; justify-content: center;">
+    <img id="galleryImage" src="Event1.jpeg" alt="Gallery Image" width="500px">
+</div>
+
+    <hr>
+
     <!-- Footer -->
     <footer style="background-color: #34003d; color: white; padding: 15px 0;">
         <div class="container text-center">
@@ -155,11 +162,32 @@
             <p style="margin-top: 10px; margin-bottom: -5px;">&copy; 2024 EventifyME. All rights reserved.</p>
         </div>
     </footer>
-
     <script>
+        let currentIndex = 0;
+        const images = ['Event1.jpeg', 'Event2.jpeg', 'Event3.jpg']; // Your image sources
+        const imageElement = document.getElementById('galleryImage');
+        const totalImages = images.length;
         
+        function cycleGalleryPhotos() {
+            // Set the current image source
+            imageElement.src = images[currentIndex];
+        
+            // Increment the currentIndex
+            currentIndex++;
+        
+            // If currentIndex exceeds the length, reset to 0
+            if (currentIndex >= totalImages) {
+                currentIndex = 0;
+            }
+        
+            // Schedule the next cycle using setTimeout for smoother timing control
+            setTimeout(cycleGalleryPhotos, 3000); // Delay next image change by 3000ms (3 seconds)
+        }
+    
+        // Directly calling the function after the page loads
+        window.onload = cycleGalleryPhotos;
     </script>
-  
-
+    
+    
 </body>
 </html>
