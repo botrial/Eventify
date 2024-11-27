@@ -162,6 +162,14 @@
             <p style="margin-top: 10px; margin-bottom: -5px;">&copy; 2024 EventifyME. All rights reserved.</p>
         </div>
     </footer>
+
+    <!--Banner-->
+    <div class="banner">
+        <div id="text">
+            Wellcome to the <span id="companyName"></span> website! Today is <span id="date"></span>.
+        </div>
+    </div>
+
     <script>
         let currentIndex = 0;
         const images = ['Event1.jpeg', 'Event2.jpeg', 'Event3.jpg']; // Your image sources
@@ -186,8 +194,19 @@
     
         // Directly calling the function after the page loads
         window.onload = cycleGalleryPhotos;
+
+        // Replace with your company name
+        const company_Name = "EventifyME";
+        document.getElementById('companyName').textContent = company_Name;
+
+        // Get the current date
+        const today = new Date();
+        const formattedData = today.toDateString();
+        document.getElementById("date").textContent = formattedData;
+
     </script>
-    
+
+
     
 </body>
 </html>
