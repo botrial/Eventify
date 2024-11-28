@@ -334,11 +334,10 @@
             const button = document.getElementById('show button');
             if (table.style.display === 'none' ) {
                 table.style.display = 'table'; // Show the table
-                button.textContent = 'Hide FAQ'; // Change button text
-                console.log(button.value)
+                button.value = 'Hide FAQ'; // Change button text
             } else {
                 table.style.display = 'none'; // Hide the table
-                button.textContent = 'Show FAQ'; // Change button text
+                button.value = 'Show FAQ'; // Change button text
             }
         }
 </script>
