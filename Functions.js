@@ -39,3 +39,71 @@ function toggleTable() {
             button.textContent = 'Show FAQ'; // Change button text
         }
     }
+// Hall constructor to initialize hall details
+class Hall {
+    constructor(size, bookingTime, location) {
+        this.size = size; // Hall size (Small, Medium, Big)
+        this.bookingTime = bookingTime; // Booking time in minutes
+        this.location = location; // Hall location
+    }
+
+    // Getter for size
+    getSize() {
+        return this.size;
+    }
+
+    // Setter for size
+    setSize(newSize) {
+        if (newSize === 'Small' || newSize === 'Medium' || newSize === 'Big') {
+            this.size = newSize;
+        }
+    }
+
+    // Getter for bookingTime
+    getBookingTime() {
+        return this.bookingTime;
+    }
+
+    // Setter for bookingTime
+    setBookingTime(newBookingTime) {
+        if (newBookingTime > 0) {
+            this.bookingTime = newBookingTime;
+        }
+    }
+
+    // Getter for location
+    getLocation() {
+        return this.location;
+    }
+
+    // Setter for location
+        setLocation(newLocation) {
+            if (typeof newLocation === 'string') {
+                this.location = newLocation;
+            }
+        }
+         
+    }
+
+
+// Function to calculate the hall booking cost
+function HallBookingCost(size, timeInMinutes) {
+    const timeInHours = Math.ceil(timeInMinutes / 60); // Convert minutes to hours
+    if (size === 'Small') return 10 * timeInHours;
+    else if (size === 'Medium') return 20 * timeInHours;
+    else if (size === 'Big') return 30 * timeInHours;
+    else return "Invalid size provided"; // Handle invalid size
+}
+
+// Function to calculate a discount
+function Discount(bookingsThisMonth, firstBooking) {
+    let discount = 0; // Default discount is 0
+    if (firstBooking === true) discount = 0.20; // 20% discount for the first booking
+    else if (bookingsThisMonth > 3) discount = 0.15; // 15% discount for more than 3 bookings
+    return discount;
+}
+
+// Function to calculate the final bill after applying the discount
+function CalculateBill(cost, discount) {
+    return cost * (1 - discount); // Apply discount and return the final cost
+}
