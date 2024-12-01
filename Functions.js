@@ -39,51 +39,88 @@ function toggleTable() {
             button.textContent = 'Show FAQ'; // Change button text
         }
     }
-// Hall constructor to initialize hall details
-class Hall {
-    constructor(size, bookingTime, location) {
-        this.size = size; // Hall size (Small, Medium, Big)
-        this.bookingTime = bookingTime; // Booking time in minutes
-        this.location = location; // Hall location
-    }
-
-    // Getter for size
-    getSize() {
-        return this.size;
-    }
-
-    // Setter for size
-    setSize(newSize) {
-        if (newSize === 'Small' || newSize === 'Medium' || newSize === 'Big') {
-            this.size = newSize;
+    class Hall {
+        constructor(bookingTime, location, picture, capacity) {
+            this.size = determineSizeByCapacity(capacity); // Hall size (Small, Medium, Big)
+            this.bookingTime = bookingTime; // Booking time in minutes
+            this.location = location; // Hall location
+            this.picture = picture; // URL or path to the hall's picture
+            this.capacity = capacity; // Capacity of the hall
         }
-    }
-
-    // Getter for bookingTime
-    getBookingTime() {
-        return this.bookingTime;
-    }
-
-    // Setter for bookingTime
-    setBookingTime(newBookingTime) {
-        if (newBookingTime > 0) {
-            this.bookingTime = newBookingTime;
+    
+        // Getter for size
+        getSize() {
+            return this.size;
         }
-    }
-
-    // Getter for location
-    getLocation() {
-        return this.location;
-    }
-
-    // Setter for location
+    
+        // Setter for size
+        setSize(newSize) {
+            if (newSize === 'Small' || newSize === 'Medium' || newSize === 'Big') {
+                this.size = newSize;
+            }
+        }
+    
+        // Getter for bookingTime
+        getBookingTime() {
+            return this.bookingTime;
+        }
+    
+        // Setter for bookingTime
+        setBookingTime(newBookingTime) {
+            if (newBookingTime > 0) {
+                this.bookingTime = newBookingTime;
+            }
+        }
+    
+        // Getter for location
+        getLocation() {
+            return this.location;
+        }
+    
+        // Setter for location
         setLocation(newLocation) {
             if (typeof newLocation === 'string') {
                 this.location = newLocation;
             }
         }
-         
+    
+        // Getter for picture
+        getPicture() {
+            return this.picture;
+        }
+    
+        // Setter for picture
+        setPicture(newPicture) {
+            if (typeof newPicture === 'string') {
+                this.picture = newPicture;
+            }
+        }
+    
+        // Getter for capacity
+        getCapacity() {
+            return this.capacity;
+        }
+    
+        // Setter for capacity
+        setCapacity(newCapacity) {
+            if (newCapacity > 0) {
+                this.capacity = newCapacity;
+            }
+        }
     }
+    
+    // Function to determine size based on capacity
+    function determineSizeByCapacity(capacity) {
+        if (capacity <= 20) {
+            return 'Small';
+        } else if (capacity <= 100) {
+            return 'Medium';
+        } else {
+            return 'Big';
+        }
+    }
+    
+    
 
 
 // Function to calculate the hall booking cost
