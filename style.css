@@ -62,6 +62,7 @@ label {
 .btn-success:hover {
     background-color: #ffffff;
     color: #51015d;
+    border-color:#51015d  ;
     transform: scale(1.08); /* Slightly larger on hover */
     box-shadow: 0px 6px 12px rgba(255, 40, 194, 0.3); /* Slightly deeper shadow */
 }
