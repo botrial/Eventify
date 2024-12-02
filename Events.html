@@ -107,7 +107,7 @@
     
     <!-- Image Gallery -->
     <div class="container d-flex justify-content-center gap-5">
-        <div class="text-center event" onclick="showButton(this)">
+        <div class="text-center event">
             <img src="Event1.jpeg" class="img-thumbnail" alt="Image 1"  >
             <p class="Image_Description">DAFITC 2024</p>
             <div class="action-buttons" style="display: none;">
@@ -190,14 +190,6 @@
             }
         }
 
-        //show button function
-        function showButton(eventElement){
-            const buttonContainer = eventElement.querySelector(".action-buttons");
-
-            if (buttonContainer.style.display === 'none' || buttonContainer.style.display === '') {
-                buttonContainer.style.display = 'flex';
-            } else { buttonContainer.style.display = 'none';}
-        }
     </script>
 
 </body>
