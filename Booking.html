@@ -25,11 +25,25 @@
             margin-top: 20px;
             margin-bottom: 10px;
         }
-        p {
+        p, label {
             font-size: 18px;
             font-weight: 200;
             line-height: 1.6;
             margin-bottom: 20px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus, select:focus {
+            border-color: #86169a;
+            outline: none;
         }
         h4 {
             font-style: italic;
@@ -49,10 +63,33 @@
             justify-content: center;
             margin-top: 20px;
         }
+        .navbar-nav .nav-link {
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            background-color: #86169a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
 
         /* Active link color in navbar */
         .navbar-nav .nav-link.active {
             color: #86169a; /* Purple color for active link */
+            font-weight: bold;
         }
     </style>
 </head>
@@ -78,27 +115,49 @@
         </div>
     </nav>
     
-    <div class="content-container">
-        <h2>Book Your Perfect Hall in Just a Few Clicks!</h2>
-        <p>
-            Looking for the ideal venue for your next event? You're just moments away from securing the perfect space.
-            With our easy-to-use booking system, you can reserve your hall in no time, providing only the essential information.
-            Whether it’s for a student organization, a social gathering, or a special celebration, we make the process simple and hassle-free.
-        </p>
-        
-        <h4>Here’s how it works:</h4>
-        <ol>
-            <li><strong>Browse Available Halls:</strong> Explore our range of venues to find the one that fits your needs, whether it’s a cozy meeting room or a large auditorium.</li>
-            <li><strong>Select Your Date:</strong> Choose the date and time that works best for you, with real-time availability updates to make planning a breeze.</li>
-            <li><strong>Provide Basic Details:</strong> Just give us the essentials—no long forms or unnecessary information. A few clicks, and you’re done!</li>
-            <li><strong>Confirm Your Booking:</strong> Receive instant confirmation and get ready for your event, knowing everything is taken care of.</li>
-        </ol>
-
-        <div class="book-btn-container">
-            <a href="Booking.html" class="btn btn-success" style="width: 30%;">Book now</a>
-        </div>
-    </div>
+    
     <hr>
+
+    <!--form-->
+    <form action="" method="post">
+        <div class="container">
+            <h4 style="color: #86169a;;">Your order</h4>
+            <div class="mb-3">
+                <label for="username">Name:</label>
+                <input type="text" name="name" id="username" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="userId">ID:</label>
+                <input type="number" maxlength="8" name="ID" id="userId" placeholder="Enter your ID" required>
+            </div>
+            <div class="mb-3">
+                <label for="hall">Halls:</label>
+                <select name="hall" id="hall" required>
+                    <option value="" disabled selected style="color: gray;">Choose Name of Halls</option>
+                    <option value="hall1">Hall 1</option>
+                    <option value="hall2">Hall 2</option>
+                    <option value="hall3">Hall 3</option>
+                    <option value="hall4">Hall 4</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="timing">Timing:</label>
+                <select name="timing" id="timing" required>
+                    <option value="" disabled selected style="color: gray;">Select Timing</option>
+                    <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
+                    <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
+                    <option value="evening">Evening (4:00 PM - 8:00 PM)</option>
+                    <option value="night">Night (8:00 PM - 12:00 AM)</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+    <br>
+            
+    
     <!-- Footer -->
     <footer style="background-color: #34003d; color: white; padding: 15px 0;">
         <div class="container text-center">

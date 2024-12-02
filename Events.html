@@ -107,9 +107,12 @@
     
     <!-- Image Gallery -->
     <div class="container d-flex justify-content-center gap-5">
-        <div class="text-center event">
-            <img src="Event1.jpeg" class="img-thumbnail" alt="Image 1">
+        <div class="text-center event" onclick="showButton(this)">
+            <img src="Event1.jpeg" class="img-thumbnail" alt="Image 1"  >
             <p class="Image_Description">DAFITC 2024</p>
+            <div class="action-buttons" style="display: none;">
+                <button class="btn btn-success register-now">Register Now</button>
+            </div>
         </div>
         <div class="text-center event">
             <img src="Event2.jpeg" class="img-thumbnail" alt="Image 2">
@@ -185,6 +188,15 @@
                     event.style.display = 'none'; // Hide the event
                 }
             }
+        }
+
+        //show button function
+        function showButton(eventElement){
+            const buttonContainer = eventElement.querySelector(".action-buttons");
+
+            if (buttonContainer.style.display === 'none' || buttonContainer.style.display === '') {
+                buttonContainer.style.display = 'flex';
+            } else { buttonContainer.style.display = 'none';}
         }
     </script>
 
