@@ -1,4 +1,6 @@
 <?php
+
+var_dump($_POST);
 // Database connection details
 $servername = "localhost";
 $username = "root";
@@ -10,12 +12,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Create a connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+    }
+    echo "Connected successfully <br>";
+    
 
 // Drop the table if it already exists
 $conn->query("DROP TABLE IF EXISTS bookings");
@@ -42,7 +46,7 @@ if ($conn->query($sql) === TRUE) {
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Retrieve form data
     $name = $_POST['name'];
-    $userID = $_POST['ID'];
+    $userID = $_POST['id'];
     $date = $_POST['date'];
     $hall = $_POST['hall'];
     $timing = $_POST['timing'];
@@ -54,9 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Prepare and bind the SQL statement
-    $sql = "INSERT INTO bookings (name, userID, date, hall, timing, duration) VALUES (?, ?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sisssi", $name, $userID, $date, $hall, $timing, $duration);
+    $sql = "INSERT INTO bookings (name, userID, date, hall, timing, duration) VALUES ('$name', '$userID', '$date', '$hall', '$timing' , '$duration')";
+    mysqli_query($conn,$sql);
 
     // Execute the statement
     if ($stmt->execute()) {
@@ -67,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Close the statement and connection
     $stmt->close();
-    $conn->close();
+    mysqli_close($conn);
 } else {
     echo "Invalid request method.";
 }
