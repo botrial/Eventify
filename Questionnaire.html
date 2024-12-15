@@ -181,6 +181,7 @@
             </ul>
         </div>
     </nav>
+    
 
     <!-- Questionnaire Section -->
     <form action="submit" method="post">
@@ -231,6 +232,7 @@
             <button type="submit" class="btn-success">Submit</button>
         </div>
     </form>
+    <br>
 
     
     <h2 style="text-align: center;">Frequently Asked Questions (FAQ)</h2>
@@ -298,43 +300,26 @@
     </footer>
 
     <script>
-        // JavaScript function to toggle checkboxes visibility based on experience selection
-      
+        function toggleCheckboxes(experience) {
+            // Hide all checkbox sections first
+            document.getElementById('excellentCheckboxes').style.display = 'none';
+            document.getElementById('goodCheckboxes').style.display = 'none';
+            document.getElementById('badCheckboxes').style.display = 'none';
     
-    function toggleCheckboxes(experience) {
-        // Hide all checkbox sections first
-        document.getElementById('excellentCheckboxes').style.display = 'none';
-        document.getElementById('goodCheckboxes').style.display = 'none';
-        document.getElementById('badCheckboxes').style.display = 'none';
-        document.getElementById('OkCheckboxes').style.display = 'none';
-
-        // Show checkboxes based on the selected experience
-        if (experience === 'Excellent') {
-            document.getElementById('excellentCheckboxes').style.display = 'block';
-            document.getElementById('goodCheckboxes').style.display = 'none';
-            document.getElementById('OkCheckboxes').style.display = 'none';
-            document.getElementById('badCheckboxes').style.display = 'none';
-        } else if (experience === 'Very good' || experience === 'Good') {
-            document.getElementById('goodCheckboxes').style.display = 'block';
-            document.getElementById('excellentCheckboxes').style.display = 'none';
-            document.getElementById('OkCheckboxes').style.display = 'none';
-            document.getElementById('badCheckboxes').style.display = 'none';
-        } else if (experience === 'OK') {
-            document.getElementById('OkCheckboxes').style.display = 'block';
-            document.getElementById('excellentCheckboxes').style.display = 'none';
-            document.getElementById('goodCheckboxes').style.display = 'none';
-            document.getElementById('badCheckboxes').style.display = 'none';
-        } else if (experience === 'Bad' || experience === 'Very bad') {
-            document.getElementById('badCheckboxes').style.display = 'block';
-            document.getElementById('excellentCheckboxes').style.display = 'none';
-            document.getElementById('goodCheckboxes').style.display = 'none';
-            document.getElementById('OkCheckboxes').style.display = 'none';
+            // Show checkboxes based on the selected experience
+            if (experience === 'Excellent') {
+                document.getElementById('excellentCheckboxes').style.display = 'block';
+            } else if (experience === 'Very good' || experience === 'Good') {
+                document.getElementById('goodCheckboxes').style.display = 'block';
+            } else if (experience === 'Bad' || experience === 'Very bad') {
+                document.getElementById('badCheckboxes').style.display = 'block';
+            }
         }
-    }
-    function toggleTable() {
+    
+        function toggleTable() {
             const table = document.getElementById('table');
             const button = document.getElementById('show button');
-            if (table.style.display === 'none' ) {
+            if (table.style.display === 'none') {
                 table.style.display = 'table'; // Show the table
                 button.value = 'Hide FAQ'; // Change button text
             } else {
@@ -342,7 +327,8 @@
                 button.value = 'Show FAQ'; // Change button text
             }
         }
-</script>
+    </script>
+    
 
         
 
