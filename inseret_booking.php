@@ -7,10 +7,6 @@ $username = "root";
 $password = "";
 $dbname = "EventifyMe";
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 // Create a connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -26,13 +22,12 @@ $conn->query("DROP TABLE IF EXISTS bookings");
 
 // SQL to create table
 $sql = "CREATE TABLE bookings (
-    id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    userID int(6) NOT NULL,  
-    name VARCHAR(255) NOT NULL,
-    date DATE NOT NULL,
-    hall VARCHAR(100) NOT NULL,
-    timing VARCHAR(100) NOT NULL,
-    duration INT(11) NOT NULL
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  date DATE NOT NULL,
+  hall VARCHAR(100) NOT NULL,
+  timing TIME NOT NULL,
+  duration INT(11) NOT NULL
 )";
 
 // Execute the query
@@ -42,6 +37,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
+<<<<<<< HEAD
 // Handle the form submission
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Retrieve form data
@@ -74,4 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     echo "Invalid request method.";
 }
+=======
+// Close the connection
+$conn->close();
+>>>>>>> ca666a9dbcc8df86edf9c285e3335683d5718870
 ?>
