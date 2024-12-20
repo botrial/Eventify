@@ -22,7 +22,7 @@ $SQL = "CREATE TABLE IF NOT EXISTS event_bookings (
 )";
 
 // Execute the query to create the table
-if ($conn->query($tableCreationSQL) === TRUE) {
+if ($conn->query($SQL) === TRUE) {
     echo "Table 'event_bookings' created successfully or already exists.<br>";
 } else {
     echo "Error creating table: " . $conn->error . "<br>";
