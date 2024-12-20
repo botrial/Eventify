@@ -72,6 +72,34 @@
             transform: scale(1.05);
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced focus effect */
         }
+
+        .ContactForm {
+            color: azure;
+            width: 60%;
+            max-width: 500px;
+            padding: 10px;
+            margin: 10px auto;
+            border-radius: 1cm;
+            border: 3px solid rgb(44, 28, 59);
+            background-color: #222;
+        }
+
+        .ContactForm input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid rgb(44, 28, 59);
+            border-radius: 8px;
+            background-color: #333;
+            color: azure;
+        }
+
+        .ContactForm input:focus {
+            border-color: #86169a;
+            outline: none;
+        }
+
+
     </style>
 </head>
 <body>
@@ -145,6 +173,36 @@
         </div>
     </div>
     <hr style="border: none; height: 5px; background-color: white;">
+
+    <!-- Form for Event Booking -->
+    <div class="ContactForm">
+        <h2 class="text-center">Book Your Event</h2>
+        <form action="booking.php" method="POST">
+            <!-- Event Name -->
+            <div class="mb-3">
+                <label for="eventName" class="form-label"><strong>Event Name</strong></label>
+                <input type="text" class="form-control" id="eventName" name="eventName" required>
+            </div>
+            
+            <!-- Person's Name -->
+            <div class="mb-3">
+                <label for="personName" class="form-label"><strong>Your Name</strong></label>
+                <input type="text" class="form-control" id="personName" name="personName" required>
+            </div>
+            
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label"><strong>Your Email</strong></label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="text-center">
+
+    <button type="submit" class="btn-success">Book Event</button>
+            </div>
+        </form>
+    </div>
     
     <!-- Footer -->
     <footer style="background-color: #34003d; color: white; padding: 15px 0;">
