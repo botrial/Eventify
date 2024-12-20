@@ -112,7 +112,7 @@
     <br>
 
     <!--Booking form-->
-    <form action="inseret_booking.php" method="post" id="bookingForm">
+    <form action="booking.php" method="post" id="bookingForm">
         <div class="container1">
             <h4 style="color: #86169a;">Your Booking</h4>
             <div class="mb-3">
@@ -228,6 +228,39 @@
                 totalPrice = totalPrice - (totalPrice * discount);
             }
 
+            const confirmationMessage = `
+            Booking successfully processed!\n\nSummary:
+            Name: ${name}
+            ID: ${id}
+            Date: ${date}
+            Hall: ${hall} (${halls[hall].capacity} people)
+            Timing: ${timing}
+            Duration: ${duration} hour(s)
+            Discount: ${discount}
+            Total Price: $${totalPrice.toFixed(2)}
+    `;
+    
+    if (confirm(confirmationMessage)) {
+        alert("Your booking was successful, and payment has been processed. Thank you!");
+        // If confirmed, submit the form
+        document.getElementById('bookingForm').submit();
+        alert("Your booking was successful, and payment has been processed. Thank you!");
+    } else {
+        // If canceled, reset the form
+        document.getElementById('bookingForm').reset();
+    }
+
+                // Redirect back to the calculation page after alert
+
+            // confirm booking
+            /*function confirmBooking() {
+             // Display an alert
+             alert('Booking successfully processed!');
+    
+             // Redirect to the calculation page after the   alert
+             window.location.href = 'calculation.html';
+            }
+
             // Display the booking summary
             const container = document.querySelector('.container1');
             container.innerHTML = `
@@ -241,9 +274,9 @@
                 <p><strong>Original Price:</strong> $${(pricePerHour * duration).toFixed(2)}</p>
                 ${discount ? `<p><strong>Discount:</strong> 20% (Student Discount Applied)</p>` : ""}
                 <p><strong>Total Price:</strong> $${totalPrice.toFixed(2)}</p>
-                <button class="btn btn-success" onclick="window.location.href='Payment.html'">Proceed to Payment</button>
+                <button class="btn btn-success" onclick="confirmBooking()">Proceed</button>
                 <button class="btn btn-danger" onclick="window.location.href='calculation.html'">Cancel Booking</button>
-            `;
+            `;*/
         });
     </script>
 
