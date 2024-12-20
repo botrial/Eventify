@@ -100,6 +100,7 @@
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link " href="Events.html">Events</a></li>
                 <li class="nav-item"><a class="nav-link active" href="calculation.html">Booking</a></li>
+                <li class="nav-item"><a class="nav-link" href="manageBooking.html">Manage Bookings</a></li>
                 <li class="nav-item"><a class="nav-link" href="Payment.html">Payment</a></li>
                 <li class="nav-item"><a class="nav-link" href="AboutUs.html">About us</a></li>
                 <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact us</a></li>
@@ -241,7 +242,6 @@
     `;
     
     if (confirm(confirmationMessage)) {
-        alert("Your booking was successful, and payment has been processed. Thank you!");
         // If confirmed, submit the form
         document.getElementById('bookingForm').submit();
     } else {
