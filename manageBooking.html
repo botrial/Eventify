@@ -82,6 +82,11 @@
                 <li class="nav-item"><a class="nav-link" href="Events.html">Events</a></li>
                 <li class="nav-item"><a class="nav-link" href="calculation.html">Booking</a></li>
                 <li class="nav-item"><a class="nav-link active" href="manageBooking.html">Manage Bookings</a></li>
+                <li class="nav-item"><a class="nav-link" href="Payment.html">Payment</a></li>
+                <li class="nav-item"><a class="nav-link" href="AboutUs.html">About us</a></li>
+                <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact us</a></li>
+                <li class="nav-item"><a class="nav-link" href="Questionnaire.html">Questionnaire</a></li>
+                <li class="nav-item"><a class="nav-link" href="Funpage.html">Fun page</a></li>
             </ul>
         </div>
     </nav>
@@ -107,8 +112,8 @@
         <!-- Update/Delete Form -->
         <div id="updateFormContainer" style="display:none;">
             <h4>Update or Delete Booking</h4>
-            <form action="updateDeleteBooking.php" method="post">
-                <input type="hidden" id="hiddenBookingId" name="hiddenBookingId">
+            <form id="updateDeleteForm">
+                <input type="hidden" id="hiddenBookingId" name="id">
                 <div class="mb-3">
                     <label for="updateName">Name:</label>
                     <input type="text" id="updateName" name="name" required>
@@ -140,8 +145,8 @@
                     <input type="number" id="updateDuration" name="duration" min="1" max="5" required>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-success" name="update">Update Booking</button>
-                    <button type="submit" class="btn btn-danger" name="delete">Delete Booking</button>
+                    <button type="button" class="btn btn-success" id="updateBtn">Update Booking</button>
+                    <button type="button" class="btn btn-danger" id="deleteBtn">Delete Booking</button>
                 </div>
             </form>
         </div>
@@ -178,7 +183,7 @@
                                     <p>Hall: ${booking.hall}</p>
                                     <p>Timing: ${booking.timing}</p>
                                     <p>Duration: ${booking.duration} hour(s)</p>
-                                    <button class="btn btn-warning" onclick="populateUpdateForm(${booking.id}, '${booking.name}', '${booking.date}', '${booking.hall}', '${booking.timing}', ${booking.duration})">Update</button>
+                                    <button class="btn btn-warning" onclick="populateUpdateForm(${booking.id}, '${booking.name}', '${booking.date}', '${booking.hall}', '${booking.timing}', ${booking.duration})">Edit</button>
                                     <hr>
                                 </div>
                             `;
@@ -202,6 +207,39 @@
             document.getElementById("updateDuration").value = duration;
             document.getElementById("updateFormContainer").style.display = "block";
         }
+
+        document.getElementById("updateBtn").addEventListener("click", function () {
+            const formData = new FormData(document.getElementById("updateDeleteForm"));
+            formData.append("action", "update");
+
+            fetch("updateDeleteBooking.php", {
+                method: "POST",
+                body: new URLSearchParams(formData),
+            })
+                .then((response) => response.text())
+                .then((data) => {
+                    alert(data);
+                    document.getElementById("updateFormContainer").style.display = "none";
+                });
+        });
+
+        document.getElementById("deleteBtn").addEventListener("click", function () {
+            const id = document.getElementById("hiddenBookingId").value;
+
+            if (confirm("Are you sure you want to delete this booking?")) {
+                fetch("updateDeleteBooking.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: `id=${id}&action=delete`,
+                })
+                    .then((response) => response.text())
+                    .then((data) => {
+                        alert(data);
+                        document.getElementById("updateFormContainer").style.display = "none";
+                        document.getElementById("bookingDetails").style.display = "none";
+                    });
+            }
+        });
     </script>
 </body>
 </html>
