@@ -1,7 +1,4 @@
 <?php
-// manageBooking.php
-
-// Database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,22 +7,22 @@ $dbname = "EventifyMe";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
 }
 
-// Check if a Booking ID is provided
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['bookingId'])) {
-    $bookingId = $conn->real_escape_string($_POST['bookingId']);
-
-    // Fetch booking details
-    $sql = "SELECT * FROM bookings WHERE id = '$bookingId'";
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Sid'])) {
+    $Sid = $conn->real_escape_string($_POST['Sid']);
+    $sql = "SELECT * FROM bookings WHERE Sid = '$Sid'";
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        $booking = $result->fetch_assoc();
-        echo json_encode($booking);
+    if ($result) {
+        $bookings = [];
+        while ($row = $result->fetch_assoc()) {
+            $bookings[] = $row;
+        }
+        echo json_encode($bookings);
     } else {
-        echo json_encode(["error" => "Booking not found."]);
+        echo json_encode(["error" => "No bookings found."]);
     }
 } else {
     echo json_encode(["error" => "Invalid request."]);

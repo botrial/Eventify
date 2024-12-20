@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <style>
-
         body {
             background-color: black;
             font-family: Arial, sans-serif;
@@ -83,11 +82,6 @@
                 <li class="nav-item"><a class="nav-link" href="Events.html">Events</a></li>
                 <li class="nav-item"><a class="nav-link" href="calculation.html">Booking</a></li>
                 <li class="nav-item"><a class="nav-link active" href="manageBooking.html">Manage Bookings</a></li>
-                <li class="nav-item"><a class="nav-link" href="Payment.html">Payment</a></li>
-                <li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="Questionnaire.html">Questionnaire</a></li>
-                <li class="nav-item"><a class="nav-link" href="Funpage.html">Fun Page</a></li>
             </ul>
         </div>
     </nav>
@@ -97,10 +91,10 @@
     <div class="container1">
         <h4 style="color: #86169a;">Manage Your Booking</h4>
         <!-- Search Form -->
-        <form action="manageBooking.php" method="post" id="manageForm">
+        <form id="manageForm">
             <div class="mb-3">
-                <label for="searchStudentId">Search by Student ID:</label>
-                <input type="number" id="searchStudentId" name="studentId" placeholder="Enter your Student ID" required>
+                <label for="searchSid">Search by Student ID:</label>
+                <input type="number" id="searchSid" name="Sid" placeholder="Enter your Student ID" required>
             </div>
             <div class="text-center">
                 <button type="button" class="btn btn-primary" id="searchBookingBtn">Search</button>
@@ -157,12 +151,17 @@
     <!-- JavaScript -->
     <script>
         document.getElementById("searchBookingBtn").addEventListener("click", function () {
-            const studentId = document.getElementById("searchStudentId").value;
+            const Sid = document.getElementById("searchSid").value;
+
+            if (!Sid) {
+                alert("Please enter a valid Student ID.");
+                return;
+            }
 
             fetch("manageBooking.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: `studentId=${studentId}`,
+                body: `Sid=${Sid}`,
             })
                 .then((response) => response.json())
                 .then((data) => {
