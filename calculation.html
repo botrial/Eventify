@@ -189,13 +189,13 @@
             hall3: { pricePerHour: 15, capacity: "6-10", timings: ["Afternoon (12:00 PM - 4:00 PM)", "Evening (4:00 PM - 8:00 PM)"] },
             hall4: { pricePerHour: 10, capacity: "2-4", timings: ["Evening (4:00 PM - 8:00 PM)", "Night (8:00 PM - 12:00 AM)"] }
         };
-
+    
         // Populate the timings based on hall selection
         document.getElementById("hall").addEventListener("change", function() {
             const hall = this.value;
             const timingSelect = document.getElementById("timing");
             timingSelect.innerHTML = '<option value="" disabled selected style="color: gray;">Select Timing</option>';
-
+    
             halls[hall].timings.forEach(timing => {
                 const option = document.createElement("option");
                 option.value = timing;
@@ -203,32 +203,34 @@
                 timingSelect.appendChild(option);
             });
         });
-
+    
         document.getElementById("bookingForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            // Get information
+    
+            // Get form data
             const name = document.getElementById("username").value;
             const id = document.getElementById("userId").value;
             const date = document.getElementById("date").value;
             const hall = document.getElementById("hall").value;
             const timing = document.getElementById("timing").value;
             const duration = document.getElementById("duration").value;
-
+    
             // Validation check
             if (!name || !id || !date || !hall || !timing || !duration) {
                 alert("Please fill in all fields.");
                 return;
             }
-
+    
             // Calculate total price
             const pricePerHour = halls[hall].pricePerHour;
             let totalPrice = pricePerHour * duration;
             let discount = 0;
+    
             if (document.getElementById("studentDiscount").checked) {
                 discount = 0.2; // 20% discount
                 totalPrice = totalPrice - (totalPrice * discount);
             }
-
+    
             const confirmationMessage = `
             Booking successfully processed!\n\nSummary:
             Name: ${name}
@@ -239,45 +241,15 @@
             Duration: ${duration} hour(s)
             Discount: ${discount}
             Total Price: $${totalPrice.toFixed(2)}
-    `;
+            `;
     
-    if (confirm(confirmationMessage)) {
-        // If confirmed, submit the form
-        document.getElementById('bookingForm').submit();
-    } else {
-        // If canceled, reset the form
-        document.getElementById('bookingForm').reset();
-    }
-
-                // Redirect back to the calculation page after alert
-
-            // confirm booking
-            /*function confirmBooking() {
-             // Display an alert
-             alert('Booking successfully processed!');
-    
-             // Redirect to the calculation page after the   alert
-             window.location.href = 'calculation.html';
+            if (confirm(confirmationMessage)) {
+                // Redirect to a confirmation page
+                window.location.href = `confirmation.html?name=${encodeURIComponent(name)}&id=${encodeURIComponent(id)}&date=${encodeURIComponent(date)}&hall=${encodeURIComponent(hall)}&timing=${encodeURIComponent(timing)}&duration=${encodeURIComponent(duration)}&price=${encodeURIComponent(totalPrice.toFixed(2))}`;
             }
-
-            // Display the booking summary
-            const container = document.querySelector('.container1');
-            container.innerHTML = `
-                <h4>Booking Summary</h4>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>ID:</strong> ${id}</p>
-                <p><strong>Date:</strong> ${date}</p>
-                <p><strong>Hall:</strong> ${hall} (${halls[hall].capacity} people)</p>
-                <p><strong>Timing:</strong> ${timing}</p>
-                <p><strong>Duration:</strong> ${duration} hour(s)</p>
-                <p><strong>Original Price:</strong> $${(pricePerHour * duration).toFixed(2)}</p>
-                ${discount ? `<p><strong>Discount:</strong> 20% (Student Discount Applied)</p>` : ""}
-                <p><strong>Total Price:</strong> $${totalPrice.toFixed(2)}</p>
-                <button class="btn btn-success" onclick="confirmBooking()">Proceed</button>
-                <button class="btn btn-danger" onclick="window.location.href='calculation.html'">Cancel Booking</button>
-            `;*/
         });
     </script>
+    
 
 </body>
 </html>
